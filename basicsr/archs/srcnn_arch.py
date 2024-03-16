@@ -1,12 +1,11 @@
 # Modified from mmagic (https://github.com/open-mmlab/mmagic)
 # Copyright (c) OpenMMLab. All rights reserved.
 
-import torch.nn as nn
-from torch.nn import functional as F
+from torch import nn as nn
 
 from basicsr.utils.registry import ARCH_REGISTRY
 
-@ARCH_REGISTRY.register(suffix='basicsr')
+@ARCH_REGISTRY.register()
 class SRCNNNet(nn.Module):
     """SRCNN network structure for image super resolution.
 
@@ -29,7 +28,7 @@ class SRCNNNet(nn.Module):
                  channels=(3, 64, 32, 3),
                  kernel_sizes=(9, 1, 5),
                  upscale_factor=4):
-        super(SRCNNNet).__init__()
+        super(SRCNNNet, self).__init__()
         assert len(channels) == 4, ('The length of channel tuple should be 4, '
                                     f'but got {len(channels)}')
         assert len(kernel_sizes) == 3, (

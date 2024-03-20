@@ -51,7 +51,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ./basicsr_srcnn_x4k915_1x16_1000k_div2k_20200608-4186f232.pth
+  pretrain_network_g: ./experiments/pretrained_models/SRCNN/srcnn_x4k915_1x16_1000k_div2k_20200608-4186f232.pth
   strict_load_g: true
   resume_state: ~
 
